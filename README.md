@@ -19,6 +19,4 @@ Edit `wp-config.php`:
 
 Start up services: `docker-compose up -d`.
 
-Configure MariaDB: `docker-compose exec db /initdb.sh`.
-
 The WordPress installation should now be available at `localhost:8080`.
