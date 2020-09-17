@@ -1,21 +1,33 @@
 version: "3.8"
 services:
-  www:
+  nginx:
     build:
       context: .
       dockerfile: Dockerfile-nginx
     networks:
       - "default-network"
     volumes:
-      - "/home/bruno/Everything:/var/Everything"
+      - "./wordpress:/usr/local/server"
     ports:
       - "8080:8080"
     depends_on:
       - "db"
+      - "php"
+  php:
+    build:
+      context: .
+      dockerfile: "Dockerfile-php"
+    networks:
+      - "default-network"
+    volumes:
+      - "./wordpress:/usr/local/server"
   db:
-    image: mariadb
+    build:
+      context: .
+      dockerfile: Dockerfile-mariadb
     environment:
       MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "wordpress"
     expose:
       - "3306"
     networks:

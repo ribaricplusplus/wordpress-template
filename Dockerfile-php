@@ -1,0 +1,4 @@
+FROM php:7.4-fpm
+ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/master/install-php-extensions /usr/local/bin/
+RUN chmod a+x /usr/local/bin/install-php-extensions; \
+    install-php-extensions ssh2 gd imagick mysqli;

@@ -1,6 +1,2 @@
-FROM debian:buster-slim
-COPY . /usr/local/src/container
-RUN /usr/local/src/container/scripts/install-wp.sh
-COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./scripts/docker-entrypoint.sh /
-ENTRYPOINT ["/docker-entrypoint.sh"]
+FROM nginx
+COPY ./conf/nginx.conf /etc/nginx/nginx.conf
