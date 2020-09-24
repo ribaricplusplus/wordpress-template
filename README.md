@@ -10,13 +10,16 @@ nginx is used as the web server, and MariaDB as the database.
 Clone this repository and delete `./git` directory.
 
 Install wordpress core in this directory under `wordpress`.
+If you have wp-cli installed:
 
-Edit `wp-config.php`:
-- DB name: `wordpress`
-- DB user: `root`
-- DB password: `root`
-- Host: `db:3306`
+`wp core download --path=wordpress`
 
-Start up services: `docker-compose up -d`.
+Configure wordpress
+
+`./wp-config.sh`
+
+Start up services
+
+`docker-compose up -d`.
 
 The WordPress installation should now be available at `localhost:8080`.
