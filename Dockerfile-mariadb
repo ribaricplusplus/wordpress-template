@@ -1,9 +1,1 @@
 FROM mariadb
-
-#
-# The commented things below create db 'wordpress' in case environment variable doesn't work
-#
-
-# COPY ./scripts/initdb.sh /initdb.sh
-# RUN chmod a+x /initdb.sh
-# RUN mysql --user=root --password=root --host=localhost --socket=/var/run/mysqld/mysqld.sock < /initdb.sql
