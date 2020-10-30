@@ -7,7 +7,7 @@ services:
     networks:
       - "default-network"
     volumes:
-      - "./wordpress:/usr/local/server"
+      - "./wordpress:/var/www/html"
     ports:
       - "8080:8080"
     depends_on:
@@ -20,7 +20,7 @@ services:
     networks:
       - "default-network"
     volumes:
-      - "./wordpress:/usr/local/server"
+      - "./wordpress:/var/www/html"
   db:
     build:
       context: .
