@@ -22,9 +22,7 @@ services:
     volumes:
       - "./wordpress:/var/www/html"
   db:
-    build:
-      context: .
-      dockerfile: Dockerfile-mariadb
+    image: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: "wordpress"
